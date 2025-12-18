@@ -1,0 +1,25 @@
+# 🐍 Virtual environment
+venv/
+
+# ⚙️ Python cache
+__pycache__/
+*.pyc
+
+# 🧠 Vector DB & temporary sessions
+chroma_store/
+sessions/
+
+# 🧾 System files
+.DS_Store
+*.db
+*.log
+
+# ⚙️ IDE configs
+.idea/
+.vscode/
+
+# 🚫 Secrets
+.env
+
+# 🚫 Git metadata (optional)
+.git/
