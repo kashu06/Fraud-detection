@@ -1,42 +1,85 @@
-Fraud Detection AI Agent
+# Fraud Detection AI Agent
+
 Simple AI-based fraud detection backend using FastAPI and Chroma vector database.
 
-Features
-Detects fraudulent transactions
-Logs sessions and checks for hijacking
-Uses custom embeddings for AI analysis
-Tech Stack
-Python, FastAPI
-Chroma vector DB
-HTML templates for basic UI
-Repo Structure
-agent/ # Backend AI logic tools/ # UI helpers main.py # FastAPI entry point init_vector_db.py # Vector DB setup custom_embeddings.py # AI embeddings requirements.txt # Python dependencies Dockerfile # Docker setup .gitignore README.md
+## Features
+- Detects fraudulent transactions
+- Logs sessions and checks for hijacking
+- Uses custom embeddings for AI analysis
 
-bash Copy code
+## Tech Stack
+- Python, FastAPI
+- Chroma vector DB
+- HTML templates for basic UI
 
-Installation
-Clone repo: git clone https://github.com/kashu06/Fraud-detection.git
-Enter directory: cd fraud_detector_agent
-Create and activate venv:
+## Repo Structure
+```
+agent/                 # Backend AI logic
+tools/                 # UI helpers
+main.py                # FastAPI entry point
+init_vector_db.py      # Vector DB setup
+custom_embeddings.py   # AI embeddings
+requirements.txt       # Python dependencies
+Dockerfile             # Docker setup
+.gitignore
+README.md
+```
+
+## Installation
+
+### Clone repo
+```bash
+git clone https://github.com/kashu06/Fraud-detection.git
+```
+
+### Enter directory
+```bash
+cd fraud_detector_agent
+```
+
+### Create and activate venv
+```bash
 python3 -m venv venv
 source venv/bin/activate   # Mac / Linux
 venv\Scripts\activate      # Windows
-Install dependencies: pip install -r requirements.txt
+```
 
-Create .env file with:
+### Install dependencies
+```bash
+pip install -r requirements.txt
+```
 
-env Copy code OPENAI_API_KEY=your_openai_api_key Initialize vector database:
+## Environment Setup
+Create a `.env` file with:
+```env
+OPENAI_API_KEY=your_openai_api_key
+```
 
-bash Copy code python init_vector_db.py Run the FastAPI server:
+## Initialize Vector Database
+```bash
+python init_vector_db.py
+```
 
-bash Copy code uvicorn main:app --reload Usage Access dashboard at http://127.0.0.1:8000
+## Run the FastAPI Server
+```bash
+uvicorn main:app --reload
+```
 
-Use API endpoints for real-time fraud detection
+## Usage
+- Access dashboard at http://127.0.0.1:8000
+- Use API endpoints for real-time fraud detection
+- Session logs stored automatically
 
-Session logs stored automatically
+## Docker Setup (Optional)
 
-Docker Setup (Optional) Build Docker image:
+### Build Docker image
+```bash
+docker build -t fraud-agent .
+```
 
-bash Copy code docker build -t fraud-agent . Run container:
+### Run container
+```bash
+docker run -p 8000:8000 --env-file .env fraud-agent
+```
 
-bash Copy code docker run -p 8000:8000 --env-file .env fraud-agent Access at http://localhost:8000t
+Access at http://localhost:8000
